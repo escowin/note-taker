@@ -16,8 +16,8 @@ router.get('/api/notes', (req, res) => {
   
 // POST ROUTES
 router.post('/api/notes', (req, res) => {
-    let newNotes = req.body
-    notes.push(newNotes);
+    let newNote = req.body
+    notes.push(newNote);
     fs.writeFileSync(
         path.join(__dirname, '../db/db.json'),
         JSON.stringify(notes))

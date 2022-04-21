@@ -4,7 +4,7 @@ const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 const app = express();
 
-// ROUTES
+// MIDDLEWARE & ROUTES
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
@@ -12,7 +12,6 @@ app.use(express.json());
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-// MIDDLEWARE
 
 // runs on localhost:3001
 app.listen(PORT, () => {
