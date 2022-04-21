@@ -1,0 +1,25 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "taking notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escowin/note-taker.git"
+  },
+  "keywords": [
+    "Express.js"
+  ],
+  "author": "Edwin Escobar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/escowin/note-taker/issues"
+  },
+  "homepage": "https://github.com/escowin/note-taker#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
