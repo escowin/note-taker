@@ -1,14 +1,28 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "* | Project Repo | https://github.com/escowin/note-taker   * | Life URL | https://dry-crag-27051.herokuapp.com/",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Edwin M. Escobar",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escowin/note-taker.git"
+  },
+  "keywords": [
+    "Express.js",
+    "backend",
+    "javascript",
+    "es6"
+  ],
+  "bugs": {
+    "url": "https://github.com/escowin/note-taker/issues"
+  },
+  "homepage": "https://github.com/escowin/note-taker#readme"
 }
