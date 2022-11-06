@@ -1,0 +1,3 @@
+console.log("successfully routing to ./routes/apiRoutes");
+
+module.exports = router;
