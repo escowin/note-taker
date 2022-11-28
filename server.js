@@ -24,7 +24,7 @@
 // const htmlRoutes = require('./routes/htmlRoutes');
 
 const express = require('express');
-const { notes } = require('./db/db.json');
+const db = require('./db/db.json');
 
 // port set up for staging, and server instantiation
 const PORT = process.env.PORT || 3001;
@@ -42,10 +42,10 @@ function noteTaker() {
 
 // routes
 // api routes
-// - GET /api/notes reads db.json, returns all saved notes as json
+// - GET /api/notes reads & displays db.json
 app.get('/api/notes', (req, res) => {
-    // let results = db;
-    // console.log(req.query)
+    let notes = db;
+    console.log(notes)
     res.json(notes);
 });
 // - POST /api/notes adds note to db.json, returns new note to client. each note needs a unique id when saved.
