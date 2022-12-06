@@ -1,3 +1,7 @@
-console.log("successfully routing to ./routes/apiRoutes");
+// ::route:: /api
+const router = require('express').Router();
+const noteRoutes = require('../apiRoutes/noteRoutes');
+
+router.use(noteRoutes); // ::route:: /api/notes
 
 module.exports = router;
