@@ -5,16 +5,17 @@ const notes = require("../../db/db.json")
 
 // CRUD
 // - get all notes
+router.get('/notes', (req, res) => {
+    let result = notes
+    // console.log("js:59 " + res.json(result));
+    res.json(result);
+});
+
 
 // - post a note. note will have an id
 // - delete a note based on its id
 
-router.get('/notes', (req, res) => {
-    // let x = notes
-    console.log("js:59 " + notes)
-    res.json(x);
-});
-
+// **previous unmodularized code**
 // router.get('/api/notes/:id', (req, res) => {
 //     const result = findById(req.params.id, notes)
 //     if (result) {
