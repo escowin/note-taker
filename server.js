@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 // ::middleware routing::
 app.use('/api', apiRoutes);
-// app.use('/', htmlRoutes);
+app.use('/', htmlRoutes);
 
 // server routes
 app.listen(PORT, () => {

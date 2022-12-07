@@ -1,7 +1,7 @@
 // ::route:: /api/noteRoutes
 const router = require('express').Router();
-const { findById } = require('../../lib/notes');
-const notes = require("../../db/db.json")
+// const { findById } = require('../../lib/notes');
+const notes = require("../../db/db.json");
 
 // CRUD
 // - get all notes
@@ -10,19 +10,15 @@ router.get('/notes', (req, res) => {
     // console.log("js:59 " + res.json(result));
     res.json(result);
 });
-// - get a specific note by its id
-router.get('/notes/:id', (req, res) => {
-    // the result is a return by the function given arguments passed. function is held in ../../lib/notes.js
-    const result = findById(req.params.id, notes);
-    if (result) {
-        console.log(`noteRoutes.js:19 ${res.json(result)}`);
-        res.json(result);
-    } else {
-        res.sendStatus(404);
-    }
-});
 
 // - post a note. note will have an id
+// router.post('/notes', (req, res) => {
+//     req.body.id = notes.length.toString()
+//     if(!validated(req.body) {
+//         res.status(400).send("note improperly formatted")
+//     })
+// });
+
 // - delete a note based on its id
 
 // **previous unmodularized code**
