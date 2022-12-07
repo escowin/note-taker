@@ -13,11 +13,10 @@ router.get('/notes', (req, res) => {
 // - get a specific note by its id
 router.get('/notes/:id', (req, res) => {
     // the result is a return by the function given arguments passed. function is held in ../../lib/notes.js
-    console.log(req.params.id)
     const result = findById(req.params.id, notes);
     if (result) {
-        res.json(result);
         console.log(`noteRoutes.js:19 ${res.json(result)}`);
+        res.json(result);
     } else {
         res.sendStatus(404);
     }
