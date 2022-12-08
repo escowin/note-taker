@@ -7,7 +7,6 @@ const notes = require("../../db/db.json");
 // - get all notes
 router.get('/notes', (req, res) => {
     let result = notes
-    // console.log("js:59 " + res.json(result));
     res.json(result);
 });
 
@@ -18,7 +17,7 @@ router.post('/notes', (req, res) => {
     res.json(note);
 });
 
-// edit notes
+// - edit a note | will require note.id 
 // router.update(){};
 
 // - delete a note based on its id
