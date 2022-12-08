@@ -1,28 +1,51 @@
 
-  # Note Taker
-  * | Project Repo | https://github.com/escowin/note-taker
-  * | Life URL | https://dry-crag-27051.herokuapp.com/
-  
-  ## DESCRIPTION
-  * Express.js Challenge: Note Taker
-  * Simple note taking app. 
-  
-  ## TABLE OF CONTENTS
-  * [Installation](#INSTALLATION)
-  
-  * [Tests](#TESTS)
+# note-taker
 
-  * [Questions](#QUESTIONS)
+  * [Repo](https://github.com/escowin/note-taker)
   
-  ## INSTALLATION
-  * clone repo
-  * CLI | npm i 
+## Description
 
-  ## TESTS
-  * CLI | node server
-  * Runs on localhost:3001
-  * start taking notes in browser
+  A note taking app to showcase my knowledge in Express routing. The app's codebase is moduralized for organization & scaling purposes. 
 
-  ## QUESTIONS (CONTACT)
-  * edwin@escowinart.com
-  * | REPO  | [GitHub](https://github.com/escowin)
+  Current Routes : GET, POST
+  
+  Future Routes : UPDATE, DELETE
+
+## Languages
+
+  HTML, CSS, JavaScript, ES6, Bootstrap, Node.js, Express.js
+
+## Table of Contents
+
+  * [Installation](#installation)
+
+  * [Usage](#usage)
+  
+  * [Contributing](#contributing)
+
+  * [Author](#author)
+
+## Installation
+
+  After cloning the repo, run the following in the command line:
+
+  ```
+  cd /note-taker; npm i; npm start
+  ```
+
+## Usage
+
+  Personal use
+
+
+## Contributing
+
+  Contact me below
+
+## Author
+
+  Edwin M. Escobar
+
+  * [Email](mailto:edwin@escowinart.com)
+
+  * [GitHub](https://github.com/escowin)
