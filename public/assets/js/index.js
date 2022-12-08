@@ -170,12 +170,10 @@ const renderNoteList = async (notes) => {
   }
 };
 
-if (!window.location.pathname === "/notes") {
-  function currentYear() {
+function currentYear() {
     let year = new Date().getFullYear();
     const yearEl = document.getElementById("year");
     yearEl.innerText = year;
-  }
 };
 
 // Gets notes from the db and renders them to the sidebar
@@ -188,8 +186,6 @@ if (window.location.pathname === "/notes") {
   noteText.addEventListener("keyup", handleRenderSaveBtn);
 };
 
-if (!window.location.pathname === "/notes") {
-  currentYear();
-};
+currentYear();
 
 getAndRenderNotes();
