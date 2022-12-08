@@ -1,7 +1,7 @@
 :root {
   --primary: hsl(198, 21%, 32%);
   --secondary: hsla(210, 3%, 13%, 0.213);
-  --text: rgb(210, 179, 179);
+  --text: rgb(237, 219, 219);
   --link: hsl(0, 44%, 29%);
   --shadow: 0 0 2rem 1rem;
 }
@@ -9,7 +9,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* border: 1px dotted blue; */
+  border: 1px dotted blue;
 }
 
 a {
@@ -22,7 +22,9 @@ a:active, a:hover {
   color: var(--link);
   text-shadow: 0 0 .5rem var(--link);
 }
-
+body {
+  background: linear-gradient(var(--secondary), var(--primary));
+}
 /* index.html */
 #index {
   display: flex;
@@ -31,10 +33,10 @@ a:active, a:hover {
   justify-content: center;
   height: 100vh;
   color: var(--text);
-  background: linear-gradient(var(--secondary), var(--primary));
+  /* background: linear-gradient(var(--secondary), var(--primary)); */
   box-shadow: var(--shadow) var(--secondary) inset;
   font-variant: small-caps;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Abel', sans-serif;
 }
 
 #index * {
@@ -44,7 +46,7 @@ a:active, a:hover {
 #app-details {
   padding: 5vw;
   display: grid;
-  grid-template-columns: 30% auto;
+  grid-template-columns: auto auto;
   gap: .75rem;
 }
 
@@ -73,6 +75,89 @@ a:active, a:hover {
   padding: .25rem;
 }
 
+/* notes.html */
+
+/* continue working on custom styles, less bootstrap */
+html {
+  height: 100%;
+}
+
+
+#notes-body {
+  height: 100%;
+}
+
+.save-note {
+  display: none;
+}
+
+.icons i {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.note-textarea,
+.note-title {
+  color: #000000;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.note-textarea {
+  resize: none;
+  height: calc(100% - 63px);
+  padding-top: 15px;
+}
+
+.note-title {
+  height: 50px;
+  margin-top: 13px;
+  font-size: 3rem;
+}
+
+.note-title:read-only,
+.note-textarea:read-only {
+  color: #757575;
+}
+
+.list-container .card {
+  height: calc(100vh - 70px);
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.list-container {
+  padding-left: 0;
+}
+
+.list-container .list-group,
+.list-container .list-group-item:first-child,
+.list-container .card {
+  border-top: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.list-item-title {
+  display: inline-block;
+  width: 75%;
+}
+
+.list-container i {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.list-container .list-group-item {
+  border-left: none;
+  border-right: none;
+  padding: 20px;
+  cursor: pointer;
+}
 /* html,
 body {
   height: 100%;
