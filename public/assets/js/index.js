@@ -180,4 +180,12 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
+function currentYear() {
+  let year = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  console.log(year)
+  yearEl.innerText = year;
+}
+
+currentYear();
 getAndRenderNotes();

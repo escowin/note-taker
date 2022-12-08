@@ -28,39 +28,5 @@ app.listen(PORT, () => {
     console.log(`    note-taker \u00A9 ${date} Edwin M. Escobar
     https://github.com/escowin/note-taker
     server now on port ${PORT}
-    http://localhost:${PORT}/api/notes`);
+    http://localhost:${PORT}/`);
 });
-
-// html routes
-// - GET /notes returns notes.html
-// - GET * returns index.html
-
-
-
-// deploy application
-
-
-// configure an express back end to serve static html files
-// configure an express back end to create an api to handle get & post requests
-// parse parameters in server-side routes
-// submit form data to a server
-// implement seperate of concerns for routing
-// deploy a server side application to the heroku platform
-
-
-// Configure an Express.js app to handle GET and POST requests.
-
-// Configure an Express.js app to serve static files.
-
-// Identify how client-side requests relate to server-side responses.
-
-// Parse optional and required parameters when creating server-side routes.
-
-// Implement client-side POST requests to submit form data to a server.
-
-// Implement separation of concerns for routing.
-
-// Deploy a server-side application to the Heroku platform.
-
-// const apiRoutes = require('./routes/apiRoutes');
-// const htmlRoutes = require('./routes/htmlRoutes');
