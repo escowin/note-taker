@@ -25,6 +25,8 @@
 
   * [Author](#author)
 
+  * [Screenshots](#screenshots)
+
 ## Installation
 
   After cloning the repo, run the following in the command line:
@@ -49,3 +51,11 @@
   * [Email](mailto:edwin@escowinart.com)
 
   * [GitHub](https://github.com/escowin)
+
+## Screenshots
+
+![mobile display](./screenshots/small.jpg)
+
+![tablet display](./screenshots/medium.jpg)
+
+![desktop display](./screenshots/large.jpg)
