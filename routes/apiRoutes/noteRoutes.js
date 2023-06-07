@@ -18,7 +18,15 @@ router.post('/notes', (req, res) => {
 });
 
 // - edit a note | will require note.id 
-// router.update(){};
+router.get("/notes/:id", (req, res) => {
+    let id = req.params.id
+    let result = notes[id];
+    console.log(result);
+    res.json(result)
+})
+// router.update("/notes:id", (req, res) => {
+//     req.
+// }){};
 
 // - delete a note based on its id
 // router.delete(){};
