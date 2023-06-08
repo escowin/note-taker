@@ -35,9 +35,17 @@ router.put("/notes/:id", (req, res) => {
 
 // - delete a note based on its id
 router.delete("/notes/:id", (req, res) => {
-    const note = notes[req.params.id];
-    console.log(note)
-    res.send('note deleted')
+    const id = req.params.id;
+    const note = notes[id];
+    if (!note) {
+        return res.status(404).json({ error: "note note found"})
+    }
+
+    // delete is a javascript keyword. this removes the specified note object from the notes array
+    delete notes[id];
+    res.json({ message: "note deleted"})
+
+    // note: deleting object leaves a null value
 });
 
 module.exports = router;
