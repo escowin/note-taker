@@ -34,6 +34,10 @@ router.put("/notes/:id", (req, res) => {
 });
 
 // - delete a note based on its id
-// router.delete(){};
+router.delete("/notes/:id", (req, res) => {
+    const note = notes[req.params.id];
+    console.log(note)
+    res.send('note deleted')
+});
 
 module.exports = router;
