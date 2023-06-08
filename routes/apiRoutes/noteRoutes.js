@@ -17,16 +17,21 @@ router.post('/notes', (req, res) => {
     res.json(note);
 });
 
-// - edit a note | will require note.id 
 router.get("/notes/:id", (req, res) => {
     let id = req.params.id
     let result = notes[id];
     console.log(result);
     res.json(result)
 })
-// router.update("/notes:id", (req, res) => {
-//     req.
-// }){};
+
+// - edit a note | will require note.id 
+router.put("/notes/:id", (req, res) => {
+    const id = req.params.id;
+    const update = req.body;
+    notes[id] = {...update, id};
+    // updated note is sent back
+    res.json(notes[id])
+});
 
 // - delete a note based on its id
 // router.delete(){};
