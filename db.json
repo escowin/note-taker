@@ -2,13 +2,13 @@
   "notes": [
     {
       "title": "Test Title",
-      "text": "Test text"
+      "text": "Test text",
+      "id": "f0s1FaaX"
     },
-    null,
     {
-      "title": "testing",
+      "title": "test 3",
       "text": "text text",
-      "id": "2"
+      "id": "CE9mzQJe"
     }
   ]
 }
