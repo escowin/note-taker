@@ -45,7 +45,7 @@ router.delete("/notes/:id", (req, res) => {
     delete notes[id];
     res.json({ message: "note deleted"})
 
-    // note: deleting object leaves a null value
+    // note: deleting object leaves a null value. need to rewrite db.json to remove null values & trailing commas
 });
 
 module.exports = router;
