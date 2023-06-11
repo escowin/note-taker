@@ -1,27 +1,22 @@
 const notes = require("../db/db.json");
+const characters = [];
+const charRanges = [
+  { min: 65, max: 90 }, // uppercase
+  { min: 97, max: 122 }, // lowercase
+  { min: 48, max: 57 }, // numeric
+];
 
-const characterSet = (array) => {
-  // the characters array is made alphanumeric string objects by iterating through the specified ranges of UTF-16 code units
-  //  A - Z
-  for (let i = 65; i <= 90; i++) {
-    array.push(String.fromCharCode(i));
+function generateCharacterRange(min, max) {
+  // iterates through the set range to push UTF-16 code units in `characters` array
+  for (let i = min; i <= max; i++) {
+    characters.push(String.fromCharCode(i));
   }
-  //  a - z
-  for (let i = 97; i < 122; i++) {
-    array.push(String.fromCharCode(i));
-  }
-  //  0 - 9
-  for (let i = 48; i <= 57; i++) {
-    array.push(String.fromCharCode(i));
-  }
-};
+  return;
+}
 
 function generateId(req) {
   let indexValue = req.length;
-  const characters = [];
-  const regex = /[A-Za-z0-0]/g;
-  const unicodeRange = "\u0000-\u007F";
-  characterSet(characters);
+  charRanges.forEach((set) => generateCharacterRange(set.min, set.max));
   console.log(characters);
 }
 
