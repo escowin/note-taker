@@ -1,26 +1,26 @@
 // ::route:: /api/noteRoutes
 const router = require("express").Router();
-const { createNote } = require("../../lib/notes");
-const db = require("../../db/db.json");
+const { createNote, updateNote } = require("../../lib/notes");
+const { notes } = require("../../db/db.json");
 const { generateId } = require("../../utils/helpers");
 
 // CRUD
 // - get all notes
 router.get("/notes", (req, res) => {
-  let result = db.notes;
+  let result = notes;
   res.json(result);
 });
 
 // - post a note. note will have an id
 router.post("/notes", (req, res) => {
   req.body.id = generateId();
-  const note = createNote(req.body, db.notes);
+  const note = createNote(req.body, notes);
   res.json(note);
 });
 
 router.get("/notes/:id", (req, res) => {
   const id = req.params.id;
-  const note = db.notes.find((note) => note.id === id);
+  const note = notes.find((note) => note.id === id);
   if (!note) {
     return res.status(404).json({ error: "note not found" });
   }
@@ -31,20 +31,21 @@ router.get("/notes/:id", (req, res) => {
 router.put("/notes/:id", (req, res) => {
   const id = req.params.id;
   const update = req.body;
-  let note = db.notes.find(note => note.id === id);
-  if (!note) {
+  let noteIndex = notes.findIndex(note => note.id === id);
+  if (!noteIndex) {
     return res.status(404).json({ error: "note not found" });
   }
 
-  note = { ...update, id };
+  notes[noteIndex] = { ...update, id };
   // updated note variable is sent back as a response. to do: re-write db.json
-  res.json(note);
+  updateNote(notes)
+  res.json(notes[noteIndex]);
 });
 
 // - delete a note based on its id
 router.delete("/notes/:id", (req, res) => {
   const id = req.params.id;
-  const note = db.notes.find(note => note.id === id);
+  const note = notes.find(note => note.id === id);
   if (!note) {
     return res.status(404).json({ error: "note note found" });
   }
