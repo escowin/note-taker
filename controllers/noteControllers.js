@@ -1,11 +1,8 @@
-const fs = require("fs");
-const path = require("path");
 const { notes } = require("../db/db.json");
-const { generateId } = require("../utils/helpers");
+const { generateId, writeDbFile } = require("../utils/helpers");
 
 // api endpoint crud methods used within express methods
 const noteController = {
-  // called in .get()
   getAllNotes(req, res) {
     let result = notes;
     res.json(result);
@@ -18,18 +15,14 @@ const noteController = {
     }
     res.json(note);
   },
-  // called in .post()
   createNote({ body }, res) {
     body.id = generateId();
     const note = body;
     notes.push(note);
-    fs.writeFileSync(
-      path.join(__dirname, "../db/db.json"),
-      JSON.stringify({ notes }, null, 2)
-    );
+
+    writeDbFile(notes)
     res.json(note);
   },
-  // called in .post()
   updateNote(req, res) {
     const id = req.params.id;
     const update = req.body;
@@ -39,13 +32,9 @@ const noteController = {
     }
     notes[noteIndex] = { ...update, id };
 
-    fs.writeFileSync(
-      path.join(__dirname, "../db/db.json"),
-      JSON.stringify({ notes }, null, 2)
-    );
+    writeDbFile(notes)
     res.json(notes[noteIndex]);
   },
-  // called in .delete()
   deleteNote(req, res) {
     const id = req.params.id;
     const note = notes.findIndex((note) => note.id === id);
@@ -56,10 +45,7 @@ const noteController = {
 
     // db.json file is rewritten by using a notes array with the specified note object removed via .splice()
     notes.splice(note, 1);
-    fs.writeFileSync(
-      path.join(__dirname, "../db/db.json"),
-      JSON.stringify({ notes }, null, 2)
-    );
+    writeDbFile(notes)
     res.json({ message: "note deleted" });
   },
 };
