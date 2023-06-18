@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const db = require("../db/db.json");
 const characters = [];
 const charRanges = [
   { min: 65, max: 90 }, // uppercase
@@ -16,7 +15,7 @@ function generateCharacterRange(min, max) {
   }
 }
 
-function generateId() {
+function generateId(notes) {
   const idArray = [];
   charRanges.forEach((set) => generateCharacterRange(set.min, set.max));
   for (let i = 0; i < idLength; i++) {
@@ -27,7 +26,7 @@ function generateId() {
 
   //   id is made by contatenating concatenates the array of characters that make up the id
   const id = idArray.join("");
-  const duplicateId = db.notes.some((note) => note.id === id);
+  const duplicateId = notes.some((note) => note.id === id);
   if (duplicateId) {
     return generateId();
   }

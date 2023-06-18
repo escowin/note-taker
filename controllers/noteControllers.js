@@ -16,7 +16,7 @@ const noteController = {
     res.json(note);
   },
   createNote({ body }, res) {
-    body.id = generateId();
+    body.id = generateId(notes);
     const note = body;
     notes.push(note);
 
