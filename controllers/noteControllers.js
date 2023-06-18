@@ -1,8 +1,14 @@
 const fs = require("fs");
 const path = require("path");
+const { notes } = require("../db/db.json");
 const { generateId } = require("../utils/helpers");
 
-// logic | note related functions
+// crud functions used in express routes
+function getAllNotes(req, res) {
+  let result = notes;
+  res.json(result)
+}
+
 function createNote(body, notes) {
   body.id = generateId();
   const note = body;
@@ -22,4 +28,4 @@ function updateNotes(notes) {
   )
 }
 
-module.exports = { createNote, updateNotes };
+module.exports = { getAllNotes, createNote, updateNotes };

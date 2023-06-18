@@ -1,14 +1,11 @@
 // ::route:: /api/noteRoutes
 const router = require("express").Router();
-const { createNote, updateNotes } = require("../../lib/notes");
+const { getAllNotes, createNote, updateNotes } = require("../../controllers/noteControllers");
 const { notes } = require("../../db/db.json");
 
 // CRUD
 // - get all notes
-router.get("/notes", (req, res) => {
-  let result = notes;
-  res.json(result);
-});
+router.route("/").get(getAllNotes);
 
 // - post a note. note will have an id
 router.post("/notes", (req, res) => {
