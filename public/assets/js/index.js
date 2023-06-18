@@ -25,6 +25,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+// restful api
 const getNotes = () =>
   fetch("/api/notes", {
     method: "GET",
@@ -36,6 +37,15 @@ const getNotes = () =>
 const saveNote = (note) =>
   fetch("/api/notes", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(note),
+  });
+
+const updateNote = (id, note) =>
+  fetch(`/api/notes/${id}`, {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
@@ -64,17 +74,36 @@ const renderActiveNote = () => {
     noteTitle.value = "";
     noteText.value = "";
   }
+
+  // clicking on a note's contents will make it editable
+  noteTitle.addEventListener("click", enableEditMode);
+  noteText.addEventListener("click", enableEditMode);
 };
+
+// allows edits to be made in selected note
+const enableEditMode = () => {
+  noteTitle.removeAttribute("readonly");
+  noteText.removeAttribute("readonly")
+}
 
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
   };
-  saveNote(newNote).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
+
+  // checks whether or not this note already exists
+  if (activeNote.id) {
+    updateNote(activeNote.id, newNote).then(() => {
+      getAndRenderNotes();
+      renderActiveNote();
+    });
+  } else {
+    saveNote(newNote).then(() => {
+      getAndRenderNotes();
+      renderActiveNote();
+    });
+  }
 };
 
 // Delete the clicked note
