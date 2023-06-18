@@ -63,4 +63,5 @@ const noteController = {
     res.json({ message: "note deleted" });
   },
 };
+
 module.exports = noteController;
