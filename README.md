@@ -2,8 +2,8 @@
 # note-taker
 
 ## Description
-### [Repo](https://github.com/escowin/note-taker)
-<!-- ### [Live URL](tbd) -->
+[Repo](https://github.com/escowin/note-taker) |
+ [Live URL](https://note-taker-wbu7.onrender.com/)
 
 `note-taker` is a light weight note-taking app built around Express routing to perform `CRUD` operations.  As an experienced developer in full-stack applications with `ORM` and `ODM` libraries, I decided to revisit this simple `Express` app as a personal challenge. My goal was to reinforce my understanding of refactoring, `JavaScript` methods, `CRUD` operations, and modularization, all while intentionally avoiding the use of a database to handle information.
 
